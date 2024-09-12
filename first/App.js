@@ -4,6 +4,7 @@ import Header from "./src/samples/propSample/Header"
 import Main from "./src/samples/propSample/Main"
 import Footer from "./src/samples/propSample/Footer"
 import CounterSample from "./src/samples/counterSample/CounterSample"
+import Home from "./src/screens/Home"
 
 const App = () => {
 
@@ -16,7 +17,8 @@ const App = () => {
       {/* <Header yazi={headerText} />
       <Main yazi2={mainText}/>
       <Footer footerText={footerText}  deneme={12} test={[1,2,3,4,5]}/> */}
-      <CounterSample/>
+      {/* <CounterSample/> */}
+      <Home />
     </>
   )
 }
