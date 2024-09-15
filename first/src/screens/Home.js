@@ -18,7 +18,9 @@ const Home = ({ navigation }) => {
   }, [])
 
   useEffect(() => {
-    getNextPage()
+    if (pageNumber < 42) {
+      getNextPage()
+    }
   }, [pageNumber])
 
 
@@ -59,7 +61,6 @@ const Home = ({ navigation }) => {
         ))
       }*/}
       {/* <Button title='Tıkla' onPress={test}/> */}
-
       <FlatList
         data={data}
         renderItem={({ item }) =>
@@ -75,11 +76,16 @@ const Home = ({ navigation }) => {
         onEndReached={() => setPageNumber(pageNumber + 1)}
         onEndReachedThreshold={3}
         ListFooterComponent={
-          <View style={{margin: 15}}>
-            <ActivityIndicator color={colors.favorites} size={"large"} />
-          </View>
+          <>
+            {pageNumber === 42 ? <Text>Tüm Datayı Gördün</Text> :
+              <View style={{ margin: 15 }}>
+                <ActivityIndicator color={colors.favorites} size={"large"} />
+              </View>
+            }
+          </>
         }
       />
+
     </View>
   )
 }
@@ -97,18 +103,18 @@ const styles = StyleSheet.create({
 
 
 
-    //SPREAD OPERATORU
-    // let testData = [1,2,3,45,6,7]
-    // let testData2 = ["a","b","c"]
+//SPREAD OPERATORU
+// let testData = [1,2,3,45,6,7]
+// let testData2 = ["a","b","c"]
 
-    // // console.log(testData)
-    // console.log(...testData)
+// // console.log(testData)
+// console.log(...testData)
 
-    // // console.log(testData2)
-    // console.log(...testData2)
+// // console.log(testData2)
+// console.log(...testData2)
 
-    // let testArray = [testData, testData2]
-    // console.log(testArray)
+// let testArray = [testData, testData2]
+// console.log(testArray)
 
-    // let testArray2 = [...testData, ...testData2]
-    // console.log(testArray2)
+// let testArray2 = [...testData, ...testData2]
+// console.log(testArray2)
